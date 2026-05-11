@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kiran Haldar N | BCA Final Year — AIMS Institutes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:       #0e0f13;
+  --bg2:      #13151a;
+  --bg3:      #181b22;
+  --card:     #1c1f28;
+  --border:   rgba(255,255,255,0.07);
+  --bh:       rgba(255,255,255,0.13);
+  --text:     #eeecea;
+  --muted:    #8a8b91;
+  --soft:     #c4c5cb;
+  --blue:     #4f8ef7;
+  --blue-d:   #3a72d8;
+  --blue-glow:rgba(79,142,247,0.15);
+  --green:    #34d399;
+  --amber:    #fbbf24;
+  --pink:     #f472b6;
+  --r:        12px;
+  --rl:       18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:15px;}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+::selection{background:var(--blue);color:#fff;}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;
+  background:rgba(14,15,19,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.82rem;color:var(--blue);
+  letter-spacing:.04em;text-decoration:none;
+}
+.logo span{color:var(--muted);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{
+  font-size:.78rem;font-weight:500;
+  color:var(--muted);text-decoration:none;
+  transition:color .2s;letter-spacing:.02em;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-pill{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;padding:.32rem .9rem;
+  background:rgba(79,142,247,.15);
+  color:var(--blue);border:1px solid rgba(79,142,247,.3);
+  border-radius:99px;letter-spacing:.04em;
+}
+
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6rem 3rem 4rem;
+  position:relative;overflow:hidden;
+  max-width:1100px;margin:0 auto;
+}
+.hero-dots{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:30px 30px;
+}
+.hero-glow{
+  position:absolute;top:-100px;right:-80px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,142,247,.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;color:var(--green);
+  background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.22);
+  border-radius:99px;padding:.3rem .85rem;
+  margin-bottom:1.8rem;letter-spacing:.06em;
+  animation:fadeUp .7s ease both;
+}
+.status-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 6px var(--green);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+h1{
+  font-size:clamp(2.6rem,6vw,5rem);
+  font-weight:800;letter-spacing:-.04em;
+  line-height:1.05;margin-bottom:1.4rem;
+  animation:fadeUp .7s .1s ease both;
+}
+h1 .hi{color:var(--muted);font-weight:400;font-size:.62em;display:block;margin-bottom:.3rem;letter-spacing:-.01em;}
+h1 .name-blue{color:var(--blue);}
+.hero-sub{
+  font-size:1rem;color:var(--muted);
+  max-width:54ch;line-height:1.78;
+  margin-bottom:2.5rem;font-weight:400;
+  animation:fadeUp .7s .2s ease both;
+}
+.hero-sub strong{color:var(--soft);font-weight:500;}
+.hero-btns{
+  display:flex;gap:.9rem;flex-wrap:wrap;
+  animation:fadeUp .7s .3s ease both;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.82rem;font-weight:600;
+  padding:.65rem 1.4rem;border-radius:9px;
+  text-decoration:none;cursor:pointer;
+  font-family:inherit;transition:all .18s;border:none;
+}
+.btn-primary{
+  background:var(--blue);color:#fff;
+  box-shadow:0 4px 20px rgba(79,142,247,.3);
+}
+.btn-primary:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 6px 24px rgba(79,142,247,.4);}
+.btn-ghost{
+  background:var(--card);color:var(--soft);
+  border:1px solid var(--border);
+}
+.btn-ghost:hover{border-color:var(--bh);color:var(--text);}
+
+/* hero cards row */
+.hero-cards{
+  display:flex;gap:1rem;margin-top:3.5rem;flex-wrap:wrap;
+  animation:fadeUp .7s .4s ease both;
+}
+.hcard{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);padding:.9rem 1.2rem;
+  display:flex;align-items:center;gap:.65rem;
+  flex:1;min-width:160px;
+  transition:border-color .2s;
+}
+.hcard:hover{border-color:var(--bh);}
+.hcard-icon{font-size:1.3rem;line-height:1;}
+.hcard-label{font-size:.72rem;color:var(--muted);margin-bottom:.12rem;}
+.hcard-val{font-size:.88rem;font-weight:600;color:var(--text);}
+
+/* ─── DIVIDER ─── */
+.wave-div{
+  width:100%;padding:0 3rem;
+  max-width:1100px;margin:0 auto;
+}
+.wave-div hr{border:none;border-top:1px solid var(--border);}
+
+/* ─── SECTION WRAPPER ─── */
+.section{
+  max-width:1100px;margin:0 auto;
+  padding:5rem 3rem;
+}
+.sec-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem;color:var(--blue);
+  letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:.5rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.sec-label::after{content:'';flex:1 0 20px;height:1px;background:var(--border);}
+h2{
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  font-weight:800;letter-spacing:-.04em;
+  margin-bottom:.6rem;
+}
+.sec-sub{font-size:.88rem;color:var(--muted);max-width:52ch;margin-bottom:3rem;line-height:1.7;}
+
+/* ─── ABOUT ─── */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;}
+.profile-box{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--rl);padding:2rem;
+  display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+  position:relative;overflow:hidden;
+}
+.profile-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--pink));
+}
+.avatar{
+  width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(79,142,247,.25),rgba(244,114,182,.15));
+  border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.2rem;font-weight:800;color:var(--blue);
+  font-family:'JetBrains Mono',monospace;
+  letter-spacing:-.04em;
+}
+.profile-name{font-size:1rem;font-weight:700;letter-spacing:-.02em;}
+.profile-role{font-size:.78rem;color:var(--muted);}
+.profile-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:.4rem;}
+.ptag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;padding:.22rem .55rem;
+  background:rgba(79,142,247,.1);
+  color:var(--blue);border:1px solid rgba(79,142,247,.2);
+  border-radius:5px;
+}
+.profile-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:.6rem;width:100%;margin-top:.4rem;
+}
+.pstat{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:9px;padding:.7rem;text-align:center;
+}
+.pstat-num{font-size:1.3rem;font-weight:800;color:var(--text);letter-spacing:-.04em;line-height:1;}
+.pstat-lbl{font-size:.65rem;color:var(--muted);margin-top:.2rem;}
+
+.about-text p{
+  font-size:.9rem;color:var(--muted);
+  line-height:1.8;margin-bottom:1rem;font-weight:400;
+}
+.about-text p strong{color:var(--soft);font-weight:600;}
+.about-points{margin-top:1.5rem;display:flex;flex-direction:column;gap:.65rem;}
+.apoint{
+  display:flex;align-items:flex-start;gap:.7rem;
+  font-size:.85rem;color:var(--muted);
+}
+.apoint-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--blue);margin-top:.55rem;flex-shrink:0;
+}
+
+/* ─── SKILLS ─── */
+#skills{background:var(--bg);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem;}
+.skill-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.5rem;
+  transition:border-color .2s,transform .2s;
+  position:relative;overflow:hidden;
+}
+.skill-card::after{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:var(--card-top,var(--blue));
+  opacity:0;transition:opacity .25s;
+}
+.skill-card:hover{border-color:var(--bh);transform:translateY(-2px);}
+.skill-card:hover::after{opacity:1;}
+.skill-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;}
+.skill-icon{
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+  background:var(--icon-bg,rgba(79,142,247,.12));
+  border:1px solid var(--icon-bd,rgba(79,142,247,.2));
+}
+.skill-title{font-size:.9rem;font-weight:700;letter-spacing:-.02em;}
+.chip-row{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.8rem;}
+.chip{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem;padding:.24rem .6rem;
+  border-radius:5px;
+  background:var(--bg3);color:var(--muted);
+  border:1px solid var(--border);
+  transition:border-color .2s,color .2s;
+}
+.chip:hover{border-color:var(--blue);color:var(--blue);}
+.chip.hi{
+  background:rgba(79,142,247,.1);
+  color:var(--blue);border-color:rgba(79,142,247,.25);
+}
+
+/* ─── PROJECTS ─── */
+#projects{background:var(--bg2);}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.3rem;}
+.proj-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--rl);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:border-color .22s,transform .22s,box-shadow .22s;
+  cursor:default;
+}
+.proj-card:hover{
+  border-color:var(--bh);
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.proj-thumb{
+  height:160px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.8rem;position:relative;
+  border-bottom:1px solid var(--border);
+}
+.proj-number{
+  position:absolute;top:.8rem;left:1rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;color:var(--muted);
+}
+.proj-badge{
+  position:absolute;top:.75rem;right:.75rem;
+  font-size:.6rem;font-weight:600;
+  padding:.2rem .55rem;border-radius:99px;
+}
+.badge-team{background:rgba(52,211,153,.12);color:var(--green);border:1px solid rgba(52,211,153,.25);}
+.badge-solo{background:rgba(79,142,247,.12);color:var(--blue);border:1px solid rgba(79,142,247,.25);}
+.badge-final{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid rgba(251,191,36,.25);}
+.proj-body{padding:1.4rem;flex:1;display:flex;flex-direction:column;}
+.proj-title{font-size:.97rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.5rem;}
+.proj-desc{
+  font-size:.82rem;color:var(--muted);
+  line-height:1.72;flex:1;margin-bottom:1.1rem;
+}
+.proj-stack{display:flex;flex-wrap:wrap;gap:.3rem;}
+.stag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;padding:.18rem .48rem;
+  background:var(--bg3);color:var(--muted);
+  border:1px solid var(--border);border-radius:4px;
+}
+
+/* featured card */
+.proj-card.featured{
+  grid-column:span 2;
+}
+.proj-card.featured .proj-thumb{height:200px;}
+@media(max-width:720px){.proj-card.featured{grid-column:span 1;}}
+
+/* ─── TECH STACK VISUAL ─── */
+#stack{background:var(--bg);}
+.stack-visual{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1rem;
+}
+.layer-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.4rem;
+  position:relative;overflow:hidden;
+}
+.layer-card::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--layer-col,var(--blue));
+}
+.layer-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;
+  margin-bottom:.8rem;
+}
+.layer-name{font-size:.97rem;font-weight:700;margin-bottom:.4rem;}
+.layer-desc{font-size:.78rem;color:var(--muted);line-height:1.65;}
+.layer-chips{margin-top:.8rem;}
+
+/* ─── EDUCATION ─── */
+#education{background:var(--bg2);}
+.edu-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--rl);padding:2rem;
+  display:flex;gap:1.5rem;align-items:flex-start;
+  position:relative;overflow:hidden;
+}
+.edu-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,var(--blue),var(--pink));
+}
+.edu-icon{
+  width:52px;height:52px;border-radius:12px;
+  background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;flex-shrink:0;
+}
+.edu-degree{font-size:1.05rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.3rem;}
+.edu-school{font-size:.9rem;color:var(--blue);font-weight:600;margin-bottom:.2rem;}
+.edu-meta{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;color:var(--muted);margin-bottom:.9rem;
+}
+.edu-body{font-size:.84rem;color:var(--muted);line-height:1.75;}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--bg);}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;align-items:start;}
+.contact-info h3{font-size:1.1rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.7rem;}
+.contact-info p{font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
+.contact-links{display:flex;flex-direction:column;gap:.6rem;}
+.clink{
+  display:flex;align-items:center;gap:.7rem;
+  font-size:.84rem;color:var(--muted);
+  text-decoration:none;padding:.65rem .9rem;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:9px;transition:all .2s;
+}
+.clink:hover{border-color:var(--bh);color:var(--text);}
+.clink-icon{font-size:1rem;width:20px;text-align:center;}
+
+.contact-form-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--rl);padding:2rem;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.fg{display:flex;flex-direction:column;gap:.32rem;margin-bottom:.85rem;}
+.fl{font-size:.72rem;font-weight:600;color:var(--muted);}
+.fi,.fta{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;padding:.62rem .9rem;
+  color:var(--text);font-family:'Outfit',sans-serif;
+  font-size:.84rem;outline:none;
+  transition:border-color .2s;
+}
+.fi:focus,.fta:focus{border-color:rgba(79,142,247,.5);}
+.fi::placeholder,.fta::placeholder{color:var(--muted);font-size:.8rem;}
+.fta{resize:vertical;min-height:110px;line-height:1.6;}
+.form-bottom{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.form-hint{font-size:.73rem;color:var(--muted);}
+
+/* ─── TOAST ─── */
+#toast{
+  position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;
+  background:#22c55e;color:#fff;
+  padding:.65rem 1.1rem;border-radius:9px;
+  font-size:.8rem;font-weight:600;
+  transform:translateY(60px);opacity:0;
+  transition:all .3s;pointer-events:none;
+  display:flex;align-items:center;gap:.4rem;
+}
+#toast.show{transform:translateY(0);opacity:1;}
+
+/* ─── FOOTER ─── */
+footer{
+  border-top:1px solid var(--border);
+  padding:2rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--bg);
+}
+.footer-left{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;color:var(--muted);
+}
+.footer-right{font-size:.75rem;color:var(--muted);}
+.footer-right span{color:var(--blue);}
+
+/* ─── REVEAL ─── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.rv.in{opacity:1;transform:translateY(0);}
+.rv2{opacity:0;transform:translateY(22px);transition:opacity .6s .1s ease,transform .6s .1s ease;}
+.rv2.in{opacity:1;transform:translateY(0);}
+.rv3{opacity:0;transform:translateY(22px);transition:opacity .6s .2s ease,transform .6s .2s ease;}
+.rv3.in{opacity:1;transform:translateY(0);}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  #hero,.section,.wave-div{padding-left:1.5rem;padding-right:1.5rem;}
+  .about-grid{grid-template-columns:1fr;}
+  .contact-wrap{grid-template-columns:1fr;}
+  .stack-visual{grid-template-columns:1fr;}
+  footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center;}
+}
+@media(max-width:640px){
+  .form-row{grid-template-columns:1fr;}
+  .hero-cards{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero-dots"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#hero"><span>{'</span> KH <span>}</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#stack">Tech Stack</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="nav-pill">Open to Internship</span>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <div class="status-dot"></div>
+      Kiran Haldar N · BCA Final Year · AIMS Institutes · Available for Internship
+    </div>
+
+    <h1>
+      <span class="hi">Hi, I'm Kiran Haldar N</span>
+      Full Stack<br/><span class="name-blue">Developer.</span>
+    </h1>
+
+    <p class="hero-sub">
+      A motivated BCA student from <strong>AIMS Institutes</strong> passionate about building web applications and solving real-world problems through code. I work with <strong>JavaScript, Node.js, Python</strong> and love everything from frontend interfaces to backend APIs.
+    </p>
+
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#projects">View My Projects</a>
+      <a class="btn btn-ghost" href="#contact">Hire Me →</a>
+    </div>
+
+    <div class="hero-cards">
+      <div class="hcard">
+        <div class="hcard-icon">🎓</div>
+        <div>
+          <div class="hcard-label">Institution</div>
+          <div class="hcard-val">AIMS Institutes</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-icon">📚</div>
+        <div>
+          <div class="hcard-label">Degree</div>
+          <div class="hcard-val">BCA — Final Year</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-icon">🚀</div>
+        <div>
+          <div class="hcard-label">Projects Built</div>
+          <div class="hcard-val">4 Projects</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-icon">💡</div>
+        <div>
+          <div class="hcard-label">Focus</div>
+          <div class="hcard-val">Full Stack + AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--bg2);">
+  <div class="section">
+    <div class="rv">
+      <div class="sec-label">About Me</div>
+      <h2>Who I Am</h2>
+      <p class="sec-sub">A quick introduction — who I am, what I do, and what drives me to build.</p>
+    </div>
+    <div class="about-grid">
+      <div class="profile-box rv2">
+        <div class="avatar">KH</div>
+        <div class="profile-name">Kiran Haldar N</div>
+        <div class="profile-role">BCA Final Year · AIMS Institutes</div>
+        <div class="profile-tags">
+          <span class="ptag">JavaScript</span>
+          <span class="ptag">Node.js</span>
+          <span class="ptag">Python</span>
+          <span class="ptag">React.js</span>
+        </div>
+        <div class="profile-stats">
+          <div class="pstat">
+            <div class="pstat-num">4</div>
+            <div class="pstat-lbl">Projects</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num">3+</div>
+            <div class="pstat-lbl">Years Learning</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num">5+</div>
+            <div class="pstat-lbl">Tech Stacks</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num">2</div>
+            <div class="pstat-lbl">Team Projects</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text rv3">
+        <p>
+          I'm <strong>Kiran Haldar N</strong>, a <strong>BCA Final Year student at AIMS Institutes</strong> with a strong foundation in web technologies and a genuine passion for problem-solving. I've been building projects throughout my degree — learning by doing is what I believe in most.
+        </p>
+        <p>
+          My experience spans across <strong>full-stack web development</strong> with JavaScript and Node.js, <strong>AI/ML integration</strong> with Python and TensorFlow, and even <strong>embedded systems</strong> with Arduino. I enjoy taking ideas from concept to working product.
+        </p>
+        <p>
+          I'm currently seeking internship opportunities where I can apply my skills, grow in a professional environment, and contribute to real-world projects.
+        </p>
+        <div class="about-points">
+          <div class="apoint"><div class="apoint-dot"></div>Built an AI plant disease detection system as my final year project</div>
+          <div class="apoint"><div class="apoint-dot"></div>Developed a face recognition attendance system with a team</div>
+          <div class="apoint"><div class="apoint-dot"></div>Passionate about scalable backend architecture and clean code</div>
+          <div class="apoint"><div class="apoint-dot"></div>Continuously learning new tools — currently exploring React.js deeper</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:var(--bg);">
+  <div class="section">
+    <div class="rv">
+      <div class="sec-label">Technical Skills</div>
+      <h2>What I Work With</h2>
+      <p class="sec-sub">Languages, frameworks, databases, and tools I use to build projects from scratch.</p>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card rv" style="--card-top:var(--blue);--icon-bg:rgba(79,142,247,.1);--icon-bd:rgba(79,142,247,.2);">
+        <div class="skill-head">
+          <div class="skill-icon">💻</div>
+          <div class="skill-title">Programming Languages</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip hi">JavaScript</span>
+          <span class="chip hi">Python</span>
+          <span class="chip">Java (Basic)</span>
+        </div>
+      </div>
+
+      <div class="skill-card rv2" style="--card-top:var(--green);--icon-bg:rgba(52,211,153,.1);--icon-bd:rgba(52,211,153,.2);">
+        <div class="skill-head">
+          <div class="skill-icon" style="background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.2);">🌐</div>
+          <div class="skill-title">Web Development</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip hi">HTML5</span>
+          <span class="chip hi">CSS3</span>
+          <span class="chip hi">JavaScript ES6+</span>
+          <span class="chip hi">Node.js</span>
+          <span class="chip hi">Express.js</span>
+        </div>
+      </div>
+
+      <div class="skill-card rv3" style="--card-top:var(--pink);--icon-bg:rgba(244,114,182,.1);--icon-bd:rgba(244,114,182,.2);">
+        <div class="skill-head">
+          <div class="skill-icon" style="background:rgba(244,114,182,.1);border-color:rgba(244,114,182,.2);">⚙️</div>
+          <div class="skill-title">Frameworks & Libraries</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip">React.js (Basic)</span>
+          <span class="chip">Bootstrap</span>
+        </div>
+      </div>
+
+      <div class="skill-card rv" style="--card-top:var(--amber);--icon-bg:rgba(251,191,36,.1);--icon-bd:rgba(251,191,36,.2);">
+        <div class="skill-head">
+          <div class="skill-icon" style="background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.2);">🗄️</div>
+          <div class="skill-title">Databases</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip hi">MongoDB</span>
+          <span class="chip hi">MySQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card rv2" style="--card-top:var(--blue);--icon-bg:rgba(79,142,247,.1);--icon-bd:rgba(79,142,247,.2);">
+        <div class="skill-head">
+          <div class="skill-icon">🛠️</div>
+          <div class="skill-title">Tools & Technologies</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip hi">Git &amp; GitHub</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">Postman</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2);">
+  <div class="section">
+    <div class="rv">
+      <div class="sec-label">Projects</div>
+      <h2>What I've Built</h2>
+      <p class="sec-sub">Real projects — built during my BCA degree, combining web development, AI, and embedded systems.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Featured -->
+      <div class="proj-card featured rv">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1f12,#0d2e1a,#091a0e);">
+          🌿
+          <span class="proj-number">04</span>
+          <span class="proj-badge badge-final">Final Year Project</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Plant Disease Detection using Deep Learning</div>
+          <p class="proj-desc">
+            AI-based system that detects plant diseases from leaf images using a Convolutional Neural Network (CNN). The model is trained on a large plant image dataset and accurately predicts diseases — helping farmers take early preventive measures and improve crop health. Integrated with a Flask web interface for real-world usability.
+          </p>
+          <div class="proj-stack">
+            <span class="stag">Python</span>
+            <span class="stag">TensorFlow / Keras</span>
+            <span class="stag">CNN</span>
+            <span class="stag">OpenCV</span>
+            <span class="stag">Flask</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card rv2">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0d1825,#0a1e35,#091528);">
+          👤
+          <span class="proj-number">01</span>
+          <span class="proj-badge badge-team">Team Project</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Face Recognition Attendance System</div>
+          <p class="proj-desc">
+            Automated attendance system using facial recognition to identify and mark student attendance in real-time. Captures live images, compares with stored datasets, and records attendance accurately — reducing manual work and proxy entries.
+          </p>
+          <div class="proj-stack">
+            <span class="stag">Python</span>
+            <span class="stag">OpenCV</span>
+            <span class="stag">Face Recognition Lib</span>
+            <span class="stag">NumPy</span>
+            <span class="stag">CSV / DB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card rv3">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#1a1200,#2a1e00,#1a0f00);">
+          🚦
+          <span class="proj-number">02</span>
+          <span class="proj-badge badge-team">Team Project</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Smart Traffic Light System using AI & Arduino</div>
+          <p class="proj-desc">
+            Intelligent traffic management system that dynamically controls signals based on real-time vehicle density. Uses AI logic and sensor inputs to optimize traffic flow, reduce congestion, and improve road safety on actual hardware.
+          </p>
+          <div class="proj-stack">
+            <span class="stag">Arduino</span>
+            <span class="stag">Embedded C</span>
+            <span class="stag">IR Sensors</span>
+            <span class="stag">Ultrasonic Sensors</span>
+            <span class="stag">Traffic Density AI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card rv">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0f1825,#15243a,#0c1520);">
+          📊
+          <span class="proj-number">03</span>
+          <span class="proj-badge badge-solo">Individual</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Power BI Dashboard</div>
+          <p class="proj-desc">
+            Interactive data visualization dashboard built in Power BI to analyze and present insights from datasets. Features charts, graphs, and filters — helping users understand trends and make data-driven decisions with clarity.
+          </p>
+          <div class="proj-stack">
+            <span class="stag">Power BI</span>
+            <span class="stag">Data Visualization</span>
+            <span class="stag">Excel / CSV</span>
+            <span class="stag">DAX (Basic)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack" style="background:var(--bg);">
+  <div class="section">
+    <div class="rv">
+      <div class="sec-label">Full Stack Overview</div>
+      <h2>The Full Stack</h2>
+      <p class="sec-sub">How the different layers come together to build a complete web application.</p>
+    </div>
+    <div class="stack-visual">
+
+      <div class="layer-card rv" style="--layer-col:var(--blue);">
+        <div class="layer-title">Frontend Layer</div>
+        <div class="layer-name">What users see</div>
+        <div class="layer-desc">Building responsive, interactive interfaces that work beautifully across devices.</div>
+        <div class="layer-chips chip-row" style="margin-top:.9rem;">
+          <span class="chip hi">HTML5</span>
+          <span class="chip hi">CSS3</span>
+          <span class="chip hi">JavaScript</span>
+          <span class="chip">React.js</span>
+          <span class="chip">Bootstrap</span>
+        </div>
+      </div>
+
+      <div class="layer-card rv2" style="--layer-col:var(--green);">
+        <div class="layer-title">Backend Layer</div>
+        <div class="layer-name">Server-side logic</div>
+        <div class="layer-desc">Designing REST APIs, handling authentication, and managing business logic.</div>
+        <div class="layer-chips chip-row" style="margin-top:.9rem;">
+          <span class="chip hi">Node.js</span>
+          <span class="chip hi">Express.js</span>
+          <span class="chip">Python</span>
+          <span class="chip">Flask</span>
+          <span class="chip">REST APIs</span>
+        </div>
+      </div>
+
+      <div class="layer-card rv3" style="--layer-col:var(--amber);">
+        <div class="layer-title">Database Layer</div>
+        <div class="layer-name">Data storage</div>
+        <div class="layer-desc">Structuring and querying data efficiently using both SQL and NoSQL databases.</div>
+        <div class="layer-chips chip-row" style="margin-top:.9rem;">
+          <span class="chip hi">MongoDB</span>
+          <span class="chip hi">MySQL</span>
+          <span class="chip">Mongoose</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Deploy row -->
+    <div class="layer-card rv" style="--layer-col:var(--pink);margin-top:1rem;grid-column:span 3;">
+      <div class="layer-title">Deployment & Tools</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <div class="layer-name">Taking apps live</div>
+          <div class="layer-desc">Deploying projects to the web using modern platforms and version control.</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip">Netlify</span>
+          <span class="chip">Vercel</span>
+          <span class="chip">Heroku</span>
+          <span class="chip hi">Git &amp; GitHub</span>
+          <span class="chip">Postman</span>
+          <span class="chip">VS Code</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="background:var(--bg2);">
+  <div class="section">
+    <div class="rv">
+      <div class="sec-label">Education</div>
+      <h2>Academic Background</h2>
+      <p class="sec-sub">My educational journey — from school to becoming a full stack developer.</p>
+    </div>
+
+    <!-- Timeline wrapper -->
+    <div style="position:relative;padding-left:1.6rem;">
+
+      <!-- Vertical line -->
+      <div style="position:absolute;left:.45rem;top:.6rem;bottom:.6rem;width:2px;background:linear-gradient(to bottom,var(--blue),var(--pink),var(--amber));border-radius:99px;opacity:.35;"></div>
+
+      <!-- BCA -->
+      <div class="edu-card rv" style="margin-bottom:1.4rem;position:relative;">
+        <div style="position:absolute;left:-1.63rem;top:1.45rem;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid var(--bg2);box-shadow:0 0 8px rgba(79,142,247,.5);"></div>
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+          <div class="edu-school">AIMS Institutes</div>
+          <div class="edu-meta">Final Year &nbsp;·&nbsp; 2022 – 2025 &nbsp;·&nbsp; Bengaluru, India</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:.5rem 0 .8rem;">
+            <span style="font-size:.72rem;padding:.22rem .65rem;border-radius:5px;background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);color:var(--blue);font-family:'JetBrains Mono',monospace;">1st Year · CGPA 8.2</span>
+            <span style="font-size:.72rem;padding:.22rem .65rem;border-radius:5px;background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);color:var(--blue);font-family:'JetBrains Mono',monospace;">2nd Year · CGPA 8.4</span>
+            <span style="font-size:.72rem;padding:.22rem .65rem;border-radius:5px;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);color:var(--green);font-family:'JetBrains Mono',monospace;">3rd Year · In Progress</span>
+          </div>
+          <div class="edu-body">
+            Studying core computer science subjects including data structures, algorithms, DBMS, networking, and software engineering principles. Achieved <strong style="color:var(--soft);">8.2 CGPA in 1st year</strong> and improved to <strong style="color:var(--soft);">8.4 CGPA in 2nd year</strong>. Complemented academics with hands-on projects in web development, AI &amp; deep learning, data visualization, and embedded systems — building skills that go well beyond the classroom.
+          </div>
+        </div>
+      </div>
+
+      <!-- PUC -->
+      <div class="edu-card rv2" style="margin-bottom:1.4rem;position:relative;">
+        <div style="position:absolute;left:-1.63rem;top:1.45rem;width:12px;height:12px;border-radius:50%;background:var(--pink);border:2px solid var(--bg2);box-shadow:0 0 8px rgba(244,114,182,.5);"></div>
+        <div class="edu-icon" style="background:rgba(244,114,182,.1);border-color:rgba(244,114,182,.2);">📗</div>
+        <div>
+          <div class="edu-degree">Pre-University Course (PUC) — Science</div>
+          <div class="edu-school" style="color:var(--pink);">Ascent Pre-University College</div>
+          <div class="edu-meta">Near 8th Mile, Hesaraghatta, Bengaluru</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:.5rem 0 .8rem;">
+            <span style="font-size:.72rem;padding:.22rem .65rem;border-radius:5px;background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.2);color:var(--pink);font-family:'JetBrains Mono',monospace;">1st PUC · 2021 – 2022</span>
+            <span style="font-size:.72rem;padding:.22rem .65rem;border-radius:5px;background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.2);color:var(--pink);font-family:'JetBrains Mono',monospace;">2nd PUC · 2022 – 2023 · 72%</span>
+          </div>
+          <div class="edu-body">
+            Completed 1st and 2nd PUC at Ascent Pre-University College. Secured <strong style="color:var(--soft);">72% marks</strong> in the 2nd PUC (2022–2023), building a solid foundation in science and analytical thinking that later supported my transition into computer science.
+          </div>
+        </div>
+      </div>
+
+      <!-- SSLC -->
+      <div class="edu-card rv3" style="position:relative;">
+        <div style="position:absolute;left:-1.63rem;top:1.45rem;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2px solid var(--bg2);box-shadow:0 0 8px rgba(251,191,36,.5);"></div>
+        <div class="edu-icon" style="background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.2);">🏫</div>
+        <div>
+          <div class="edu-degree">SSLC (10th Standard)</div>
+          <div class="edu-school" style="color:var(--amber);">Sri Vidya Kendra School</div>
+          <div class="edu-meta">Near Peenya 2nd Stage, near Bank of Baroda, Bengaluru</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:.5rem 0 .8rem;">
+            <span style="font-size:.72rem;padding:.22rem .65rem;border-radius:5px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);color:var(--amber);font-family:'JetBrains Mono',monospace;">SSLC · 2020 – 2021 · 65%</span>
+          </div>
+          <div class="edu-body">
+            Completed 10th standard (SSLC) from Sri Vidya Kendra School in the 2020–2021 batch, securing <strong style="color:var(--soft);">65% marks</strong>. This is where my curiosity for computers and technology first took root.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end timeline -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg);">
+  <div class="section">
+    <div class="rv">
+      <div class="sec-label">Contact</div>
+      <h2>Get In Touch</h2>
+      <p class="sec-sub">Looking for an internship where I can learn, contribute, and grow. Let's talk!</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="rv2">
+        <h3>Let's connect</h3>
+        <p>I'm <strong style="color:var(--soft);">Kiran Haldar N</strong>, a BCA Final Year student at AIMS Institutes, actively looking for internship opportunities. If you have a role that fits my skills, or just want to say hello — my inbox is open. I typically respond within 24 hours.</p>
+        <div class="contact-links">
+          <a class="clink" href="https://github.com/KaranBhai123M" target="_blank">
+            <span class="clink-icon">🐙</span> GitHub — KaranBhai123M
+          </a>
+          <a class="clink" href="https://www.linkedin.com/in/kiran-haldar-n-43067b2a2" target="_blank">
+            <span class="clink-icon">💼</span> LinkedIn — kiran-haldar-n
+          </a>
+          <a class="clink" href="mailto:kiranhaldar288@gmail.com">
+            <span class="clink-icon">📧</span> kiranhaldar288@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-card rv3">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="fg">
+              <label class="fl">Name</label>
+              <input class="fi" type="text" id="cName" placeholder="Your name"/>
+            </div>
+            <div class="fg">
+              <label class="fl">Email</label>
+              <input class="fi" type="email" id="cEmail" placeholder="your@email.com"/>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="fl">Subject</label>
+            <input class="fi" type="text" id="cSubj" placeholder="Internship opportunity / Collaboration"/>
+          </div>
+          <div class="fg">
+            <label class="fl">Message</label>
+            <textarea class="fta" id="cMsg" placeholder="Tell me about the opportunity or what you have in mind..."></textarea>
+          </div>
+          <div class="form-bottom">
+            <button class="btn btn-primary" type="submit">Send Message ↗</button>
+            <span class="form-hint">I'll reply within 24 hours.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2025 · Kiran Haldar N · BCA Final Year · AIMS Institutes</div>
+  <div class="footer-right">Built with <span>HTML, CSS & JavaScript</span></div>
+</footer>
+
+<div id="toast">✓ Message sent! I'll be in touch soon.</div>
+
+<script>
+// Scroll reveal
+const rvEls = document.querySelectorAll('.rv,.rv2,.rv3');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.07 });
+rvEls.forEach(el => obs.observe(el));
+
+// Contact form
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const n = document.getElementById('cName').value.trim();
+  const em = document.getElementById('cEmail').value.trim();
+  const m = document.getElementById('cMsg').value.trim();
+  if (!n || !em || !m) { alert('Please fill in your name, email, and message.'); return; }
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3200);
+  this.reset();
+});
+
+// Stat counter
+function countUp(el, target, suffix) {
+  let c = 0; const step = target / 35;
+  const t = setInterval(() => {
+    c = Math.min(c + step, target);
+    el.textContent = Math.round(c) + suffix;
+    if (c >= target) clearInterval(t);
+  }, 28);
+}
+const statsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    document.querySelectorAll('.pstat-num').forEach((el, i) => {
+      const data = [4, 3, 5, 2];
+      const suf  = ['', '+', '+', ''];
+      countUp(el, data[i], suf[i]);
+    });
+    statsObs.disconnect();
+  }
+}, { threshold: 0.4 });
+const firstStat = document.querySelector('.pstat');
+if (firstStat) statsObs.observe(firstStat);
+</script>
+</body>
+</html>
